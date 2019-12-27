@@ -25,7 +25,7 @@ FROM arm32v7/adoptopenjdk
 RUN mkdir -p /work
 WORKDIR /work/
 
-COPY target/*-runner /work/application
+COPY ./target/code-with-quarkus-1.0.0-SNAPSHOT-runner.jar /work/application
 RUN chmod 775 /work
 EXPOSE 8080
 CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
